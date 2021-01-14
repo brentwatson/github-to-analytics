@@ -15,7 +15,7 @@ Output GitHub PR data as CSV file.
 query_start_time = datetime.today() - timedelta(days=DAYS)
 g = Github(GITHUB_TOKEN)
 with open('output.csv', 'w', newline='') as csv_file:
-    csv_writer = csv.writer(csv_file, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     csv_writer.writerow(['ID', 'Link', 'Name', 'Backlog', 'In Progress', 'Done', 'State', 'User'])
 
     for gh_repo in REPOS:
